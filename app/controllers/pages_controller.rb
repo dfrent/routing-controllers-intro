@@ -2,7 +2,7 @@ class PagesController < ApplicationController
   before_action :set_kitten_url, only: [:kitten, :kittens]
 
   def contest
-    @header = "good luck in the contest"
+    redirect_to "/welcome"
   end
 
 
