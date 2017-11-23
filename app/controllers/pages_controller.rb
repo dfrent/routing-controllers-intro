@@ -2,6 +2,7 @@ class PagesController < ApplicationController
   before_action :set_kitten_url, only: [:kitten, :kittens]
 
   def contest
+    flash[:notice] = "Sorry, the contest has ended"
     redirect_to "/welcome"
   end
 
@@ -15,7 +16,12 @@ class PagesController < ApplicationController
   end
 
   def secrets
-    @header = "ssssshhhhhhhhhhhhhh"
+    if params[:magic_word] == "raptors"
+      @header = "ssssshhhhhhhhhhhhhh"
+    else
+      flash[:alert] = "Sorry, you're not authorized to see that page!"
+      redirect_to "/welcome"
+    end
   end
 
   def about
