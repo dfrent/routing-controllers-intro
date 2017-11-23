@@ -11,6 +11,7 @@ class PagesController < ApplicationController
 
   def kittens
     @header = "1a 2b 3c 4d"
+    @kitten_url
   end
 
   def secrets
@@ -19,7 +20,11 @@ class PagesController < ApplicationController
 
   def about
     @header = "this is a little story about us"
+  end
 
+  def kitten
+    requested_size = params[:size]
+    @kitten_url = "http://lorempixel.com/#{requested_size}/#{requested_size}/cats"
   end
 
 end
