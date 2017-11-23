@@ -1,4 +1,5 @@
 class PagesController < ApplicationController
+  before_action :set_kitten_url, only: [:kitten, :kittens]
 
   def contest
     @header = "good luck in the contest"
@@ -11,7 +12,6 @@ class PagesController < ApplicationController
 
   def kittens
     @header = "1a 2b 3c 4d"
-    @kitten_url
   end
 
   def secrets
@@ -23,6 +23,9 @@ class PagesController < ApplicationController
   end
 
   def kitten
+      end
+
+  def set_kitten_url
     requested_size = params[:size]
     @kitten_url = "http://lorempixel.com/#{requested_size}/#{requested_size}/cats"
   end
