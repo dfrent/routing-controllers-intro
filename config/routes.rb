@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
 
-get '/' => 'pages#welcome'
+root 'pages#welcome'
 
-get '/kitten/:size' => 'pages#kitten'
+get '/kitten/:size' => 'pages#kitten', as: 'kitten'
 
 get '/welcome' => 'pages#welcome'
 
@@ -12,7 +12,7 @@ get '/contest' => 'pages#contest'
 
 get '/kittens/:size' => 'pages#kittens'
 
-get '/secrets/:magic_word' => 'pages#secrets'
+get '/secrets/:magic_word' => 'pages#secrets', as: 'secret_word'
 
 
 end

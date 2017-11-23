@@ -12,7 +12,7 @@ class PagesController < ApplicationController
   end
 
   def kittens
-    @header = "1a 2b 3c 4d"
+
   end
 
   def secrets
@@ -29,6 +29,7 @@ class PagesController < ApplicationController
   end
 
   def kitten
+      # params[:size]
       end
 
   def set_kitten_url
